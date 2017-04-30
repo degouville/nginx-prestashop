@@ -37,7 +37,8 @@ cd nginx-prestashop
 └── README.md
  ```
 
-2. Next download the PrestaShop source and unzip it. The stable version currently is 1.6.1.13.
+2. Next download the PrestaShop source and unzip it. The stable version
+   currently is 1.6.1.13.
 
  ```bash
  # Download the PrestaShop source
@@ -79,19 +80,15 @@ All the steps are defined in this script [install-Nginx-PrestaShop.sh](install-N
 
 ## Starting your PrestaShop
 
-1. Set strong passwords in the [docker-compose.yml](docker-compose.yml) file.
+1. Set strong passwords in the [.env](.env) file.
 
- ```yaml
-    mysql:
-        build: docker-images/mysql
-        hostname: sql-server
-        volumes:
-            - ./mysql:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: mysql-root-pwd
-            MYSQL_USER: mysql-user
-            MYSQL_PASSWORD: mysql-pwd
-            MYSQL_DATABASE: prestashop
+ ```
+    #To do: change for production environment
+    MYSQL_ROOT_PASSWORD=mysql-root-pwd
+    MYSQL_USER=mysql-user
+    MYSQL_PASSWORD=mysql-pwd
+    MYSQL_DATABASE=prestashop
+
  ```
 
 2. Start your PrestaShop using `docker-compose up`.
@@ -100,7 +97,9 @@ All the steps are defined in this script [install-Nginx-PrestaShop.sh](install-N
 
    The MySQL's server name is `sql-server`.
 
-   Do not forget to delete the `install` folder in the PrestaShop directory in the end. As the directory now belongs to 'www-data' switch to that user or run as root:
+   Do not forget to delete the `install` folder in the PrestaShop directory in
+   the end. As the directory now belongs to 'www-data' switch to that user or
+   run as root:
 
  ```bash
     sudo rm -r prestashop/install
@@ -119,8 +118,11 @@ The dockerized version of your PrestaShop consists of the following containers:
   1. [Nginx](docker-images/nginx/Dockerfile) web server image
   2. [PHP](docker-images/php-fpm/Dockerfile) php:fpm image
   3. [MySQL](docker-images/mysql/Dockerfile) MySQL image
-  4. [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) PHP My Admin image (on port 9010)
-  5. [Portainer](https://hub.docker.com/r/portainer/portainer/) Portainer image (on port 9000). **Added for illustrative purposes only, not needed for production.**
+  4. [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) PHP My
+     Admin image (on port 9010)
+  5. [Portainer](https://hub.docker.com/r/portainer/portainer/) Portainer image
+     (on port 9000).
+     **Added for illustrative purposes only, not needed for production.**
 
 The screen shot below visualizes the setup:
 
