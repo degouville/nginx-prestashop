@@ -1,10 +1,3 @@
-# @Author: Andreas Schlapbach <schlpbch>
-# @Date:   2017-04-30T13:24:14+02:00
-# @Email:  schlpbch@gmail.com
-# @Last modified by:   schlpbch
-# @Last modified time: 2017-04-30T13:31:48+02:00
-# @License: ALv2
-
 #!/usr/bin/env bash
 
 # Download the PrestaShop source
