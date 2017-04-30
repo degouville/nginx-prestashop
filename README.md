@@ -32,21 +32,22 @@ cd nginx-prestashop
 ├── documentation
 │   └── containersNetwork.png
 ├── install-Nginx-PrestaShop.sh
+├── install-Nginx-PrestaShop1.7.sh
 ├── LICENSE
 └── README.md
  ```
 
-2. Next download the PrestaShop source and unzip it. The stable version currently is 1.6.1.10.
+2. Next download the PrestaShop source and unzip it. The stable version currently is 1.6.1.13.
 
  ```bash
  # Download the PrestaShop source
- wget https://www.prestashop.com/download/old/prestashop_1.6.1.10.zip
+ wget https://www.prestashop.com/download/old/prestashop_1.6.1.13.zip
 
  # Unzip the PrestaShop archive
- unzip prestashop_1.6.1.10.zip
+ unzip prestashop_1.6.1.13.zip
 
  # Remove zip and install file
- rm prestashop_1.6.1.10.zip Install_PrestaShop.html
+ rm prestashop_1.6.1.13.zip Install_PrestaShop.html
  ```
 
 3. Set the correct user and group ownership for the PrestaShop directory (run as root).
@@ -68,6 +69,7 @@ Your directory should now look like this:
     ├── prestashop
     │   └── ...
     ├── install-Nginx-PrestaShop.sh
+    ├── install-Nginx-PrestaShop1.7.sh
     ├── LICENSE
     └── README.md
  ```
@@ -118,9 +120,9 @@ The dockerized version of your PrestaShop consists of the following containers:
   2. [PHP](docker-images/php-fpm/Dockerfile) php:fpm image
   3. [MySQL](docker-images/mysql/Dockerfile) MySQL image
   4. [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) PHP My Admin image (on port 9010)
-  5. [UI For Docker](https://hub.docker.com/r/uifd/ui-for-docker/) UI for Docker image (on port 9000). **Added for illustrative purposes only, not needed for production.**
+  5. [Portainer](https://hub.docker.com/r/portainer/portainer/) Portainer image (on port 9000). **Added for illustrative purposes only, not needed for production.**
 
-The screen shot below visualizes the setup (screen shot taken from 'UI For Docker', tab 'Containers Network'):
+The screen shot below visualizes the setup:
 
 [![NGINX PrestaShop: Containers Network](documentation/containersNetwork.png)](documentation/containersNetwork-png)
 
