@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Download the PrestaShop source
-wget https://www.prestashop.com/download/old/prestashop_1.7.1.1.zip
+wget https://www.prestashop.com/download/old/prestashop_1.7.4.2.zip
 
 # Unzip the PrestaShop archive
-unzip prestashop_1.7.1.1.zip
+unzip prestashop_1.7.4.2.zip
 
 # Create prestashop directory
 mkdir prestashop
@@ -19,4 +19,4 @@ mv index.php prestashop
 sudo chown -R www-data:www-data prestashop/
 
 # Remove zip and install file
-rm prestashop_1.7.1.1.zip Install_PrestaShop.html
+rm prestashop_1.7.4.2.zip Install_PrestaShop.html
